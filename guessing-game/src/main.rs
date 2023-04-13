@@ -14,15 +14,18 @@ fn main() {
         io::stdin()
         .read_line(&mut guess)
         .expect("failed to readline");
-        let mut guess: u32 = guess.trim().parse().expect("Please type a number!");
+        let input: u32 = guess.trim().parse().expect("Please type a number!");
         println!("input guess");
 
-        match guess.cmp(&secret_number){
+        match input.cmp(&secret_number){
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
-            Ordering::Equal => println!("You win!"),
+            Ordering::Equal => {
+                println!("congrats!!");
+                break;
+            }
         }
-        guess = 0;
+        guess.clear();
     };
     
 }
