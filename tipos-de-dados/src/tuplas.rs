@@ -9,7 +9,7 @@ impl Objeto2d {
         self.width * self.height
     }
 }
-
+git 
 
 fn main() {
     println!("Hello, world!");

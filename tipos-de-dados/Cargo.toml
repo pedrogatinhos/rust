@@ -11,3 +11,5 @@ edition = "2021"
 [[bin]]
 name =  "tuplas"
 path = "src/tuplas.rs"
+name = "enums"
+path = "src/enums/enumns.rs"
