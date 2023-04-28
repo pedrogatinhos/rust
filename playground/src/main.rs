@@ -1,36 +1,36 @@
 fn main() {
-    soma_numeros();
+    // soma_numeros();
+    start_e_soma();
 }
 
-fn soma_numeros() {
-    loop {
-        match get_nums() {
-            Ok(result) => {
-                println!("O resultado é {}", result);
-                break;
-            },
-            Err(_) => println!("Erro ao obter os números"),
-        }
-    }
+fn start_e_soma(){
+    let numero1 = 
+     match recebe_numero() {
+        Ok(result) => result,
+        Err(_) => { println!("entrada invalida"); 
+                    return start_e_soma();
+        },
+    };  
+    let numero2 = 
+     match recebe_numero() {
+        Ok(result) => result,
+        Err(_) => { println!("entrada invalida"); 
+           return start_e_soma();
+        },
+}; 
+    let result: u32 = numero1 + numero2;
+    println!("{result}")
 }
 
-fn get_nums() -> Result<u32, ()> {
-    let num1_placeholder = rprompt::prompt_reply("Digite um numero ").unwrap();
-    let num1 = String::from(num1_placeholder.trim());
-    let num1 = match num1.parse::<u32>() {
+   
+fn recebe_numero() -> Result<u32, ()> {
+    let num_placeholder = rprompt::prompt_reply("digite um numero").unwrap();
+    let num_placeholder = String::from(num_placeholder.trim());
+    let num: u32 = match num_placeholder.parse::<u32>(){
         Ok(a) => a,
         Err(_) => return Err(()),
     };
-
-    println!("parsed");
-    println!("{num1}");
-
-    let num2_placeholder = rprompt::prompt_reply("Digite um numero ").unwrap();
-    let num2 = String::from(num2_placeholder.trim());
-    let num2: u32 = match num2.parse::<u32>() {
-        Ok(a) => a,
-        Err(_) => return Err(()),
-    };
-    let result = num1 + num2;
-    Ok(result)
+    println!("executed");
+    Ok(num)
 }
+
