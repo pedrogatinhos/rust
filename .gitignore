@@ -1,0 +1,11 @@
+# Cargo generated files
+**/target/
+**/Cargo.lock
+**/Cargo.toml.orig
+**/*.rs.bk
+.idea
+
+# Rust/Cargo build artifacts
+**/*.exe
+**/*.dll
+**/*.pdb
