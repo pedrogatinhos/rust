@@ -8,8 +8,7 @@ fn main() {
     for item in vetor.iter() {
         match nums.get(item) {
         Some(T) => {
-            let ac = *nums.get(item).unwrap();
-            nums.insert(*item, ac+1);   //vetor.iter returnn refs, must be actual values, that's why *
+            nums.insert(*item, T+1);   //vetor.iter returnn refs, must be actual values, that's why *
             biggest_repeat = if *nums.get(item).unwrap() > biggest_repeat {*item}  else { biggest_repeat };
         },
         _=> {
