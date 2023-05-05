@@ -1,0 +1,20 @@
+[package]
+name = "collection-module"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[lib]
+name = "minha_biblioteca"
+path = "src/lib.rs"
+
+[[bin]]
+name = "meu_aplicativo"
+path = "src/main.rs"
+
+[diagnostics]
+# desativando aviso de convenção de nomenclatura non_snake_case
+rustc-args = ["-A", "non_snake_case"]
