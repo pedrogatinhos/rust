@@ -9,3 +9,8 @@
 **/*.exe
 **/*.dll
 **/*.pdb
+
+# Added by cargo
+
+/target
+/Cargo.lock
